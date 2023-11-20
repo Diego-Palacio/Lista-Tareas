@@ -15,12 +15,12 @@ export const Tarea = ({tarea,index}) => {
                     <CardActionArea> 
                         <CardContent>
                         
-                        {tarea}     
+                            {tarea}     
 
                         </CardContent>
                     </CardActionArea>
                 </Card> 
-            :"" }
+              :"" }
                 
             </>            
         );

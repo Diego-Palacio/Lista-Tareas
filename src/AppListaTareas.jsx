@@ -4,7 +4,9 @@ import { Tarea } from "./componentes/tarea"
 
 export const AppListaTareas = ( ) => {
 
-    const [tareas, setTareas]=useState([""]);
+    const [tareas, setTareas]=useState([]);
+
+    console.log(tareas)
 
     return (<>
 
