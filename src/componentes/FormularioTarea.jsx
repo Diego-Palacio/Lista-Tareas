@@ -10,7 +10,7 @@ export const FormularioTarea = ({listaTareas}) => {
     }
 
   return (
-        <form onSubmit={(e)=>agregarTarea(e)}>
+        <form  style={{justifyContent:"center",display:"flex", margin:8+"px"}} onSubmit={(e)=>agregarTarea(e)}>
             <input type="text" name="texto" style={{fontFamily: 'Commissioner',width:250+"px", marginRight:10+"px",marginBottom:10+"px"}}/>
             <button type="submit"> Agregar tarea </button>
         </form>

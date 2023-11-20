@@ -2,44 +2,31 @@ import { Box, Button, Card, CardActionArea, CardContent, Checkbox, Grid, IconBut
 import { Fragment } from "react";
 
 
-export const Tarea = ({tarea,index}) => {
+export const Tarea = ({tarea,index,tareas,setTareas}) => {
    
     //bolleano que devuelve si la tarea ingresada es vacia
     let vacio= tarea !== "";
 
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
+    const borrarTarea = (e) => {
+        console.log("tarea borrada")
+        setTareas(tareas.filter(t => t !=tarea)  )
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
     return (
-            <>
+            < >
 
             { vacio? 
             
-                <Card sx={{ maxWidth: 545, mt:2}}>
-                    <CardActionArea> 
-                        <CardContent>
-                        
-                        <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
-                            <Box gridColumn="span 8">
-                                <ListItem style={{padding:0,margin:20,fontSize:'18px',fontFamily: 'Commissioner'}}> {tarea} </ListItem>
-                            </Box>
-                            <Box gridColumn="span 4">
-                                <ListItem>
-                                            <Checkbox {...label} color="success" size="large"/>
-                                            <Button variant="outlined" color="error">Borrar</Button>
-                                </ListItem>
-                            </Box>
-                        </Box>
-
-                            
-
-                            
-
-                           
-
-
-                        </CardContent>
-                    </CardActionArea>
-                </Card> 
+                <>
+                    {tarea}
+                    <Checkbox {...label} color="success" size="large"/>
+                    <Button onClick={(e)=>borrarTarea(e)} variant="outlined" color="error">Borrar</Button>
+                </>
+                   
               :"" }
                 
             </>            

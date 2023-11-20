@@ -1,6 +1,7 @@
 import { useState } from "react"
-import { FormularioTarea } from "./componentes/formularioTarea"
-import { Tarea } from "./componentes/tarea"
+import { FormularioTarea } from "./componentes/FormularioTarea"
+import { Tarea } from "./componentes/Tarea"
+import { Grid, ListItem } from "@mui/material";
 
 export const AppListaTareas = ( ) => {
 
@@ -10,15 +11,28 @@ export const AppListaTareas = ( ) => {
 
     return (<>
 
-        <h1>Lista de Tareas:</h1>
+        <h1 style={{textAlign:"center"}}>Lista de Tareas:</h1>
 
         <FormularioTarea listaTareas={setTareas} />
 
-        {
-          tareas.map( (tareas,index)=> ( 
-             <Tarea tarea={tareas} key={index} />
-          )
-        )}
+
+        <Grid justifyContent="center" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            
+          {
+            tareas.map( (t,index)=> ( 
+
+                <Grid xs={4}  style={{border:1+"px solid grey",height:120+"px", borderRadius:12+"px",margin:4+"px"}}>
+                  <ListItem>
+                      <Tarea tareas={tareas}  setTareas={setTareas} tarea={t} key={index}  />
+                  </ListItem>
+                  </Grid>
+            )
+          )}
+
+        </Grid>
+        
+     
+
 
         
 
