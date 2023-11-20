@@ -6,13 +6,12 @@ export const FormularioTarea = ({listaTareas}) => {
         let textoTarea=e.target.texto.value;
         textoTarea !== "" ?  listaTareas(tareas => ([...tareas, textoTarea])) : ""
         e.preventDefault();
-        e.stopPropagation();
-        
+        e.stopPropagation();     
     }
 
   return (
         <form onSubmit={(e)=>agregarTarea(e)}>
-            <input type="text" name="texto" style={{width:250+"px", marginRight:10+"px",marginBottom:10+"px"}}/>
+            <input type="text" name="texto" style={{fontFamily: 'Commissioner',width:250+"px", marginRight:10+"px",marginBottom:10+"px"}}/>
             <button type="submit"> Agregar tarea </button>
         </form>
   )
