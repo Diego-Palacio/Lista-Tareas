@@ -21,9 +21,9 @@ export const Tarea = ({tarea,index,tareas,setTareas}) => {
 
             { vacio? 
             
-                <>
-                    {tarea.tarea}
-                    <Checkbox {...label} color="success" size="large"/>
+                <>  
+                    <Checkbox color="success" size="large"/>
+                    <p style={{width:"350px",overflowWrap:"break-word"}}>{tarea.tarea}</p>
                     <Button onClick={(e)=>borrarTarea(e)} variant="outlined" color="error">Borrar</Button>
                 </>
                    
