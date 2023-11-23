@@ -1,14 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FormularioTarea } from "./componentes/FormularioTarea"
-import { Tarea } from "./componentes/Tarea"
-import { Grid, ListItem } from "@mui/material";
 import { ListaTareas } from "./componentes/ListaTareas";
+    
+const init = () =>{
+    return JSON.parse(localStorage.getItem('listatareas'))|| [];
+  }
 
 export const AppListaTareas = ( ) => {
 
-    const [tareas, setTareas]=useState([]);
+    const [tareas, setTareas]=useState(init);
 
-    console.log(tareas)
+    useEffect ( ()=>{
+        localStorage.setItem('listatareas',JSON.stringify(tareas))
+    },[tareas])
 
     return (<>
 
