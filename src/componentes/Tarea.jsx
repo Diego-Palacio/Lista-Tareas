@@ -16,15 +16,32 @@ export const Tarea = ({tarea,index,tareas,setTareas}) => {
         e.stopPropagation();
     }
 
+    const completarTarea= (e) =>{
+        console.log("tarea completa"+e.target.value)
+        console.log(tareas)
+        //buscamos la tarea seleccionada como completa
+        setTareas(tareas.filter(t => t !=tarea)  )      
+        //modificamos sus datos y de esta forma la completa se ubica al final de las listas de tareas                                         
+        setTareas(tareas => ([...tareas,  
+            { tarea: tarea.tarea,
+               id:1,
+               estado:true
+             }
+          ]))
+
+    }
+
+    
+
     return (
             < >
 
             { vacio? 
             
                 <>  
-                    <Checkbox color="success" size="large"/>
                     <p style={{width:"350px",overflowWrap:"break-word"}}>{tarea.tarea}</p>
-                    <Button onClick={(e)=>borrarTarea(e)} variant="outlined" color="error">Borrar</Button>
+                    <input type="button" style={{display: tarea.estado===true ? "none" :"hidden",marginRight:4+"px"}} onClick={(e)=>completarTarea(e)} value="completar" size="large"/>
+                    <Button onClick={(e)=>borrarTarea(e)} size="small" variant="outlined" color="error">Borrar</Button>
                 </>
                    
               :"" }
