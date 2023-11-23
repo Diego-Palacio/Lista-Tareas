@@ -1,10 +1,10 @@
 
-export const FormularioTarea = ({listaTareas}) => {
+export const FormularioTarea = ({setTareas}) => {
 
     const agregarTarea = (e) =>{
         console.log("Tarea agregada")
         let textoTarea=e.target.texto.value;
-        textoTarea !== "" ?  listaTareas(tareas => ([...tareas, textoTarea])) : ""
+        textoTarea !== "" ?  setTareas(tareas => ([...tareas, textoTarea])) : ""
         e.preventDefault();
         e.stopPropagation();     
     }
