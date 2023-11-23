@@ -4,7 +4,12 @@ export const FormularioTarea = ({setTareas}) => {
     const agregarTarea = (e) =>{
         console.log("Tarea agregada")
         let textoTarea=e.target.texto.value;
-        textoTarea !== "" ?  setTareas(tareas => ([...tareas, textoTarea])) : ""
+        textoTarea !== "" ?  setTareas(tareas => ([...tareas,  
+           { tarea: textoTarea,
+              id:1,
+              estado:false
+            }
+         ])) : ""
         e.preventDefault();
         e.stopPropagation();     
     }

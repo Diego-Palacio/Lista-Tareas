@@ -11,7 +11,7 @@ export const Tarea = ({tarea,index,tareas,setTareas}) => {
 
     const borrarTarea = (e) => {
         console.log("tarea borrada")
-        setTareas(tareas.filter(t => t !=tarea)  )
+        setTareas(tareas.filter(t => t !=tarea)  )                                                          
         e.preventDefault();
         e.stopPropagation();
     }
@@ -22,7 +22,7 @@ export const Tarea = ({tarea,index,tareas,setTareas}) => {
             { vacio? 
             
                 <>
-                    {tarea}
+                    {tarea.tarea}
                     <Checkbox {...label} color="success" size="large"/>
                     <Button onClick={(e)=>borrarTarea(e)} variant="outlined" color="error">Borrar</Button>
                 </>
