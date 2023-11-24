@@ -18,16 +18,10 @@ export const Tarea = ({tarea,index,tareas,setTareas}) => {
 
     const completarTarea= (e) =>{
         console.log("tarea completa"+e.target.value)
-        console.log(tareas)
-        //buscamos la tarea seleccionada como completa
-        setTareas(tareas.filter(t => t !=tarea)  )      
-        //modificamos sus datos y de esta forma la completa se ubica al final de las listas de tareas                                         
-        setTareas(tareas => ([...tareas,  
-            { tarea: tarea.tarea,
-               id:1,
-               estado:true
-             }
-          ]))
+        console.log(tareas)                                  
+       tarea.estado=true;
+       setTareas([...tareas])
+          
 
     }
 
