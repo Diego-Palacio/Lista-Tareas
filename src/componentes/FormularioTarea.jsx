@@ -6,7 +6,6 @@ export const FormularioTarea = ({setTareas}) => {
         let textoTarea=e.target.texto.value;
         textoTarea !== "" ?  setTareas(tareas => ([...tareas,  
            { tarea: textoTarea,
-              id:1,
               estado:false
             }
          ])) : ""
@@ -19,5 +18,7 @@ export const FormularioTarea = ({setTareas}) => {
             <input type="text" name="texto" style={{fontFamily: 'Commissioner',width:250+"px", marginRight:10+"px",marginBottom:10+"px"}}/>
             <button type="submit"> Agregar tarea </button>
         </form>
+
+        
   )
 }
