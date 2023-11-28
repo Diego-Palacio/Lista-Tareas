@@ -2,7 +2,6 @@
 export const FormularioTarea = ({setTareas}) => {
 
     const agregarTarea = (e) =>{
-        console.log("Tarea agregada")
         let textoTarea=e.target.texto.value;
         textoTarea !== "" ?  setTareas(tareas => ([...tareas,  
            { tarea: textoTarea,
